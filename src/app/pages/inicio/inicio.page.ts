@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonList, IonItem, IonIcon } from '@ionic/angular/standalone';
 import {  RouterLink } from '@angular/router';
 import { addIcons } from 'ionicons';
-import { americanFootball, logoAppleAppstore } from 'ionicons/icons';
+import { alertCircleOutline, americanFootball } from 'ionicons/icons';
 
 interface Componente {
   icon: string;
@@ -28,7 +28,7 @@ export class InicioPage implements OnInit {
       redirectTo: '/action-sheet'
     },
     {
-      icon: 'logo-apple-appstore',
+      icon: 'alert-circle-outline',
       name: 'Alert',
       redirectTo: '/alert'
     }
@@ -36,7 +36,7 @@ export class InicioPage implements OnInit {
   constructor() {
     addIcons({
       americanFootball,
-      logoAppleAppstore
+      alertCircleOutline
 
 
     })
