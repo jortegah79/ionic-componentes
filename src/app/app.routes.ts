@@ -20,4 +20,24 @@ export const routes: Routes = [
     path: 'action-sheet',
     loadComponent: () => import('./pages/action-sheet/action-sheet.page').then( m => m.ActionSheetPage)
   },
+  {
+    path: 'avatar',
+    loadComponent: () => import('./pages/avatar/avatar.page').then( m => m.AvatarPage)
+  },
+  {
+    path: 'button',
+    loadComponent: () => import('./pages/button/button.page').then( m => m.ButtonPage)
+  },
+  {
+    path: 'card',
+    loadComponent: () => import('./pages/card/card.page').then( m => m.CardPage)
+  },
+  {
+    path: 'checkbox',
+    loadComponent: () => import('./pages/checkbox/checkbox.page').then( m => m.CheckboxPage)
+  },
+  {
+    path: 'date-time',
+    loadComponent: () => import('./pages/date-time/date-time.page').then( m => m.DateTimePage)
+  },
 ];

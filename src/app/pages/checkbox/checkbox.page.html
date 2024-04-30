@@ -1,0 +1,20 @@
+<component-header title="checkbox"></component-header>
+<ion-content class="ion-padding">
+
+  <ion-list>
+    @for (d of data; track $index) {
+    <ion-item  >
+      <ion-checkbox #item
+      (click)="onClick(item)"
+      [name]="d.name"
+      [color]="d.name"
+      justify="space-between"
+      [(ngModel)]="d.selected">Checkbox {{d.name}}</ion-checkbox>
+    </ion-item>
+  }
+  </ion-list>
+
+  <ion-button (click)="verData()" expand="block" fill="solid" >
+    Ver Data
+  </ion-button>
+</ion-content>

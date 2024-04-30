@@ -1,5 +1,15 @@
 <component-header title="alert"></component-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-button (click)="presentAlert()" expand="block" fill="solid" mode="ios">
+    One CLick
+  </ion-button>
+  <ion-button (click)="presentAlertWithButtons()" expand="block" fill="solid" mode="ios" color="secondary">
+    Multiple
+  </ion-button>
+
+  <ion-button mode="ios"expand="block" id="present-alert" color="tertiary">Click to prompt</ion-button>
+  <ion-alert trigger="present-alert" header="Please enter your info" [buttons]="alertButtons"
+    [inputs]="alertInputs"></ion-alert>
 
 </ion-content>
