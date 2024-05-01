@@ -1,0 +1,35 @@
+<component-header title="{{ nombre ||'Inputs'}}" />
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-list>
+    <ion-item>
+      <ion-input label="Input normal"></ion-input>
+    </ion-item>
+    <ion-item>
+
+      <ion-input debounce="1s" autocomplete="name" label="Input con placeholder" placeholder="Nombre" type="text"
+        [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+
+    <ion-input labelPlacement="floating" label="cosito" type="text" placeholder="Awesome Input" fill="solid"
+      errorText="No te llamas así"></ion-input>
+  </ion-list>
+
+  <ion-list >
+    <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
+      <ion-list-header>
+        <ion-label>Formulario válido:{{formulario.valid}}</ion-label>
+      </ion-list-header>
+      <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="usuario.email"
+        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required></ion-input>
+      <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="usuario.password"
+        required></ion-input>
+        <ion-button [disabled]="formulario.invalid"
+        expand="block" type="submit" >
+        Aceptar
+      </ion-button>
+    </form>
+  </ion-list>
+
+</ion-content>

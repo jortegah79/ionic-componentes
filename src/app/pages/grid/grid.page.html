@@ -1,0 +1,27 @@
+<component-header title="grid" />
+<ion-content [fullscreen]="true">
+
+  <ion-grid fixed>
+    <ion-row>
+
+      @for (item of [1,2,3,4,5,6,7,8,9,0,11,12]; track $index) {
+
+      <ion-col size="12" sizeMd="4" sizeLg="3">
+        <ion-card>
+          <ion-img src="/assets/stan-lee.jpg"></ion-img>
+          <ion-card-header>
+            <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+            <ion-card-title>Awesome Title</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. A neque nostrum quidem sed quisquam. Ut modi sequi
+            voluptates atque ipsam recusandae repellat quod reiciendis maxime adipisci, totam nesciunt incidunt
+            laudantium inventore quaerat ducimus, assumenda dignissimos ad soluta eaque! Et, hic.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      }
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

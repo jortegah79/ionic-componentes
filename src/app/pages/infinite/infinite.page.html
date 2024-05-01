@@ -1,0 +1,17 @@
+<component-header title="infinite scroll" />
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+
+    @for (item of data; track $index) {
+    <ion-item>
+      <ion-label>Item-{{$index + 1}}</ion-label>
+    </ion-item>
+    }
+  </ion-list>
+
+  <ion-infinite-scroll threshold="10%"  position="bottom" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="circles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

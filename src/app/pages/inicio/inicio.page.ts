@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonList, IonItem, IonIcon } from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 import { addIcons } from 'ionicons';
-import { alertCircleOutline, americanFootball, beakerOutline, calendarOutline, cardOutline, checkmarkCircleOutline, radioButtonOffOutline } from 'ionicons/icons';
+import { alertCircleOutline, americanFootball, beakerOutline, calendarOutline, carOutline, cardOutline, checkmarkCircleOutline, gridOutline, hammerOutline, infiniteOutline, list, listOutline, radioButtonOffOutline } from 'ionicons/icons';
 
 interface Componente {
   icon: string;
@@ -51,10 +51,36 @@ export class InicioPage implements OnInit {
       icon: 'calendar-outline',
       name: 'DateTime',
       redirectTo: '/date-time'
+    },
+    {
+      icon: 'car-outline',
+      name: 'Fab',
+      redirectTo: '/fab'
+    },
+    {
+      icon: 'grid-outline',
+      name: 'Grid',
+      redirectTo: '/grid'
+    },
+    {
+      icon: 'infinite-outline',
+      name: 'Infinite-Scroll',
+      redirectTo: '/infinite'
+    }
+    ,
+    {
+      icon: 'hammer-outline',
+      name: 'Inputs',
+      redirectTo: '/input'
+    } ,
+    {
+      icon: 'list-outline',
+      name: 'List',
+      redirectTo: '/list'
     }
   ];
   constructor() {
-    addIcons({ calendarOutline, checkmarkCircleOutline, americanFootball, alertCircleOutline, beakerOutline, radioButtonOffOutline, cardOutline });
+    addIcons({ listOutline,hammerOutline,infiniteOutline,gridOutline,carOutline, calendarOutline, checkmarkCircleOutline, americanFootball, alertCircleOutline, beakerOutline, radioButtonOffOutline, cardOutline });
   }
 
   ngOnInit() {
