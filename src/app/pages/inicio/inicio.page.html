@@ -1,14 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-toolbar >
+<ion-header class="ion-no-border" >
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title color="primary">Componentes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <!-- <ion-button routerLink="/alert" routerLinkActive="router-link-active">To alert</ion-button>
-  <ion-button routerLink="/action-sheet">To action sheet</ion-button> -->
   <ion-list>
-    @for (c of componentes; track c.name) {
+    @for (c of componentes | async; track c.name) {
 
     <ion-item [routerLink]="c.redirectTo" detail>
       <ion-icon [name]="c.icon" slot="start" color="primary">

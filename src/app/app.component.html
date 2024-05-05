@@ -1,3 +1,27 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <ion-menu menuId="cosito" contentId="firstId">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Componentes- menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-menu-toggle *ngFor="let c of componentes | async">
+        <ion-item  detail
+        [routerLink]="c.redirectTo">
+          <ion-icon [name]="c.icon" slot="start" color="primary">
+          </ion-icon>
+          {{c.name}}
+        </ion-item>
+      </ion-menu-toggle>
+      </ion-list>
+
+    </ion-content>
+  </ion-menu>
+
+
+
+  <ion-router-outlet class="ion-page" id="firstId"></ion-router-outlet>
 </ion-app>

@@ -1,89 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonList, IonItem, IonIcon } from '@ionic/angular/standalone';
+import {
+  IonContent, IonHeader, IonTitle, IonToolbar,
+  IonButton, IonList, IonItem, IonIcon,
+  IonButtons, IonBackButton, MenuController,IonMenuToggle
+} from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 import { addIcons } from 'ionicons';
-import { alertCircleOutline, americanFootball, beakerOutline, calendarOutline, carOutline, cardOutline, checkmarkCircleOutline, gridOutline, hammerOutline, infiniteOutline, list, listOutline, radioButtonOffOutline } from 'ionicons/icons';
+import { alertCircleOutline, americanFootball, beakerOutline, calendarOutline, carOutline, cardOutline, checkmarkCircleOutline, gridOutline, hammerOutline, infiniteOutline, list, listOutline, phonePortraitOutline, radioButtonOffOutline, refreshCircleOutline, reorderThreeOutline, tabletPortraitOutline } from 'ionicons/icons';
+import { HeaderComponent } from "../../components/header/header.component";
+import { Componente } from 'src/app/interfaces/Componente';
+import { Observable } from 'rxjs';
+import { DataService } from 'src/app/services/data.service';
 
-interface Componente {
-  icon: string;
-  name: string;
-  redirectTo: string;
-}
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
   standalone: true,
-  imports: [IonIcon, IonItem, IonList, IonButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, RouterLink]
+  imports: [IonBackButton, IonButtons, IonIcon, IonItem, IonList, IonButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, RouterLink, HeaderComponent]
 })
-export class InicioPage implements OnInit {
+export class InicioPage {
 
-  componentes: Componente[] = [
-    {
-      icon: 'american-football',
-      name: 'Action Sheet',
-      redirectTo: '/action-sheet'
-    },
-    {
-      icon: 'alert-circle-outline',
-      name: 'Alert',
-      redirectTo: '/alert'
-    },
-    {
-      icon: 'beaker-outline',
-      name: 'Avatar',
-      redirectTo: '/avatar'
-    },
-    {
-      icon: 'radio-button-off-outline',
-      name: 'Button',
-      redirectTo: '/button'
-    },
-    {
-      icon: 'card-outline',
-      name: 'Cards',
-      redirectTo: '/card'
-    },
-    {
-      icon: 'calendar-outline',
-      name: 'DateTime',
-      redirectTo: '/date-time'
-    },
-    {
-      icon: 'car-outline',
-      name: 'Fab',
-      redirectTo: '/fab'
-    },
-    {
-      icon: 'grid-outline',
-      name: 'Grid',
-      redirectTo: '/grid'
-    },
-    {
-      icon: 'infinite-outline',
-      name: 'Infinite-Scroll',
-      redirectTo: '/infinite'
-    }
-    ,
-    {
-      icon: 'hammer-outline',
-      name: 'Inputs',
-      redirectTo: '/input'
-    } ,
-    {
-      icon: 'list-outline',
-      name: 'List',
-      redirectTo: '/list'
-    }
-  ];
+  private menuCtrl = inject(MenuController);
+  private dataService=inject(DataService);
+
+  componentes: Observable<Componente[]>;
   constructor() {
-    addIcons({ listOutline,hammerOutline,infiniteOutline,gridOutline,carOutline, calendarOutline, checkmarkCircleOutline, americanFootball, alertCircleOutline, beakerOutline, radioButtonOffOutline, cardOutline });
+    addIcons({ tabletPortraitOutline,phonePortraitOutline,refreshCircleOutline, reorderThreeOutline, listOutline, hammerOutline, infiniteOutline, gridOutline, carOutline, calendarOutline, checkmarkCircleOutline, americanFootball, alertCircleOutline, beakerOutline, radioButtonOffOutline, cardOutline });
+    this.componentes=this.dataService.getMenuOpts();
   }
 
-  ngOnInit() {
+  openMenu() {
+    this.menuCtrl.open('cosito')
   }
 
 }

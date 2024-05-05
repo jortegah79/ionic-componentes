@@ -1,0 +1,11 @@
+<component-header title="loading"></component-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+
+
+  <ion-button expand="block" id="open-loading">Mostrar Loading 1</ion-button>
+  <ion-loading trigger="open-loading" message="Cargando...INLINE" duration="3000"></ion-loading>
+
+  <ion-button (click)="mostrarLoading()" expand="block">
+    Mostrar Loading 2
+  </ion-button>
+</ion-content>

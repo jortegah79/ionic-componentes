@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color='primary'></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>list-reorder</ion-title>
+
+    <!-- Button -->
+    <ion-button (click)="toggleVisibility()" slot="end" color="primary" fill="clear">
+      Toggle
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-reorder-group [disabled]="active" (ionItemReorder)="doReorder($event)">
+      @for (heroe of personajes; track heroe) {
+      <ion-item>
+        <ion-label>{{heroe}}</ion-label>
+        <!-- @if (this.active) { -->
+        <ion-reorder slot="end">
+          <ion-icon  name="swap-vertical-outline"></ion-icon>
+        </ion-reorder>
+        <!-- } -->
+      </ion-item>
+
+      }
+    </ion-reorder-group>
+  </ion-list>
+
+</ion-content>

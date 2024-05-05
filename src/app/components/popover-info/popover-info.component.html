@@ -1,0 +1,7 @@
+<ion-list>
+  @for (item of items; track $index) {
+    <ion-item (click)="onClick($index + 1)">
+      <ion-label>Awesome Label {{$index + 1}}</ion-label>
+    </ion-item>
+  }
+</ion-list>

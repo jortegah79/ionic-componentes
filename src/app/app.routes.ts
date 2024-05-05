@@ -60,4 +60,24 @@ export const routes: Routes = [
     path: 'list',
     loadComponent: () => import('./pages/list/list.page').then( m => m.ListPage)
   },
+  {
+    path: 'list-reorder',
+    loadComponent: () => import('./pages/list-reorder/list-reorder.page').then( m => m.ListReorderPage)
+  },
+  {
+    path: 'loading',
+    loadComponent: () => import('./pages/loading/loading.page').then( m => m.LoadingPage)
+  },
+  {
+    path: 'modal',
+    loadComponent: () => import('./pages/modal/modal.page').then( m => m.ModalPage)
+  },
+  {
+    path: 'modal-info',
+    loadComponent: () => import('./pages/modal-info/modal-info.page').then( m => m.ModalInfoPage)
+  },
+  {
+    path: 'popover',
+    loadComponent: () => import('./pages/popover/popover.page').then( m => m.PopoverPage)
+  },
 ];
