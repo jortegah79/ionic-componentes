@@ -8,7 +8,7 @@ import {
 } from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 import { addIcons } from 'ionicons';
-import { alertCircleOutline, americanFootball, beakerOutline, calendarOutline, carOutline, cardOutline, checkmarkCircleOutline, codeWorkingOutline, gridOutline, hammerOutline, infiniteOutline, list, listOutline, phonePortraitOutline, radioButtonOffOutline, refreshCircleOutline, reorderThreeOutline, tabletPortraitOutline } from 'ionicons/icons';
+import { alertCircleOutline, americanFootball, arrowDownCircleOutline, beakerOutline, calendarOutline, carOutline, cardOutline, checkmarkCircleOutline, codeWorkingOutline, gridOutline, hammerOutline, infiniteOutline, list, listOutline, phonePortraitOutline, radioButtonOffOutline, refreshCircleOutline, reorderThreeOutline, tabletPortraitOutline } from 'ionicons/icons';
 import { HeaderComponent } from "../../components/header/header.component";
 import { Componente } from 'src/app/interfaces/Componente';
 import { Observable } from 'rxjs';
@@ -29,7 +29,7 @@ export class InicioPage {
 
   componentes: Observable<Componente[]>;
   constructor() {
-    addIcons({ codeWorkingOutline,tabletPortraitOutline,phonePortraitOutline,refreshCircleOutline, reorderThreeOutline, listOutline, hammerOutline, infiniteOutline, gridOutline, carOutline, calendarOutline, checkmarkCircleOutline, americanFootball, alertCircleOutline, beakerOutline, radioButtonOffOutline, cardOutline });
+    addIcons({ arrowDownCircleOutline,codeWorkingOutline,tabletPortraitOutline,phonePortraitOutline,refreshCircleOutline, reorderThreeOutline, listOutline, hammerOutline, infiniteOutline, gridOutline, carOutline, calendarOutline, checkmarkCircleOutline, americanFootball, alertCircleOutline, beakerOutline, radioButtonOffOutline, cardOutline });
     this.componentes=this.dataService.getMenuOpts();
   }
 

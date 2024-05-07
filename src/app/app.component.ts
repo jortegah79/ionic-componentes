@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { IonMenuButton,IonMenuToggle, IonMenu, IonApp, IonRouterOutlet, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton, IonIcon, IonLabel, IonList, IonItem, IonToggle } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { alertCircleOutline, americanFootball, beakerOutline, calendarOutline, carOutline, cardOutline, checkmarkCircleOutline, codeWorkingOutline, gridOutline, hammerOutline, infiniteOutline, listOutline, menuOutline, phonePortraitOutline, radioButtonOffOutline, refreshCircleOutline, reorderThreeOutline, tabletPortraitOutline } from 'ionicons/icons';
+import { alertCircleOutline, americanFootball, arrowDownCircleOutline, beakerOutline, calendarOutline, carOutline, cardOutline, checkmarkCircleOutline, codeWorkingOutline, gridOutline, hammerOutline, infiniteOutline, listOutline, menuOutline, phonePortraitOutline, radioButtonOffOutline, refreshCircleOutline, reorderThreeOutline, tabletPortraitOutline } from 'ionicons/icons';
 import { Observable } from 'rxjs';
 import { Componente } from './interfaces/Componente';
 import { DataService } from './services/data.service';
@@ -26,7 +26,7 @@ export class AppComponent {
       checkmarkCircleOutline, americanFootball,
       alertCircleOutline, beakerOutline,
       radioButtonOffOutline, cardOutline,menuOutline,phonePortraitOutline,
-      tabletPortraitOutline,codeWorkingOutline
+      tabletPortraitOutline,codeWorkingOutline,arrowDownCircleOutline
     })
     this.componentes = this.dataService.getMenuOpts();
   }

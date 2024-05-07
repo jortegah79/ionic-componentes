@@ -84,4 +84,8 @@ export const routes: Routes = [
     path: 'progress',
     loadComponent: () => import('./pages/progress/progress.page').then( m => m.ProgressPage)
   },
+  {
+    path: 'refresher',
+    loadComponent: () => import('./pages/refresher/refresher.page').then( m => m.RefresherPage)
+  },
 ];
