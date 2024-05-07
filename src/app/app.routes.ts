@@ -80,4 +80,8 @@ export const routes: Routes = [
     path: 'popover',
     loadComponent: () => import('./pages/popover/popover.page').then( m => m.PopoverPage)
   },
+  {
+    path: 'progress',
+    loadComponent: () => import('./pages/progress/progress.page').then( m => m.ProgressPage)
+  },
 ];
