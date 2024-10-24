@@ -1,0 +1,19 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+  <ion-searchbar #busqueda placeholder="Buscar album..." inputmode="text" [debounce]="1000" (ionInput)="onSearchChange($event)"
+    animated="true"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    @for (album of albumes | filtro:textoBuscar ; track $index) {
+    <ion-item>
+      <ion-label>{{album.title}}</ion-label>
+    </ion-item>
+    }
+  </ion-list>
+</ion-content>

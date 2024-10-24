@@ -88,4 +88,40 @@ export const routes: Routes = [
     path: 'refresher',
     loadComponent: () => import('./pages/refresher/refresher.page').then( m => m.RefresherPage)
   },
+  {
+    path: 'search',
+    loadComponent: () => import('./pages/search/search.page').then( m => m.SearchPage)
+  },
+  {
+    path: 'segment',
+    loadComponent: () => import('./pages/segment/segment.page').then( m => m.SegmentPage)
+  },
+  {
+    path: 'swipper',
+    loadComponent: () => import('./pages/swipper/swipper.page').then( m => m.SwipperPage)
+  },
+  {
+    path:'tabs',
+    redirectTo:'/tabs/account',
+    pathMatch:'full'
+  },
+  {
+    path: 'tabs',
+    loadComponent: () => import('./pages/tabs/tabs.page').then( m => m.TabsPage),
+    children:[
+      {path:'account',
+        loadComponent:()=>import('./pages/avatar/avatar.page').then(p=>p.AvatarPage)
+      },
+      {path:'contact',
+      loadComponent:()=>import('./pages/list/list.page').then(p=>p.ListPage)
+    },
+    {path:'settings',
+    loadComponent:()=>import('./pages/infinite/infinite.page').then(p=>p.InfinitePage)
+  }
+    ]
+  },
+  {
+    path: 'toast',
+    loadComponent: () => import('./pages/toast/toast.page').then( m => m.ToastPage)
+  },
 ];
